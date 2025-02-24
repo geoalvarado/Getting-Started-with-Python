@@ -9,3 +9,8 @@ To loop through a NumPy array, use this:
 
 To loop through rows and columns in a DataFrame:
 `for row, column in df.iterrows():`
+
+The best way to add a column to a DataFrame is with apply:
+`df['NEW_COLUMN] = df['OLD_COLUMN'].apply()`
+
+When looping for 'specific times' use `range()` with the number of times you would like to loop inside the parenthesis
