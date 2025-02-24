@@ -6,3 +6,6 @@ To loop through a dictionary, use this:
 
 To loop through a NumPy array, use this:
 `for val in np.nditer(my_array) :`
+
+To loop through rows and columns in a DataFrame:
+`for row, column in df.iterrows():`
