@@ -56,7 +56,9 @@ If you're unsure whether an attribute needs parentheses, you can check if it's c
 
 `callable(obj.attribute)`.
 
-## Using the agg() (aggregate attribute from Pandas)
+# Using Pandas
+
+## Using the agg()
 This is a nice attribute you can use to apply one or more custom or existing function to your dataframe.
 Example:
 ```
@@ -64,4 +66,18 @@ df['column'].agg([function1, function2])
 ```
 Remember to always include list type [] square brackets when doing more than one function or activity
 
-
+## Counting values from a DF:
+You can use this to sort values you see on a dataframe:
+```
+df_sorted = df['column'].value_counts()
+```
+Where:
+```
+Series.value_counts(
+    normalize=False, 
+    sort=True, 
+    ascending=False, 
+    bins=None, 
+    dropna=True
+)
+```
