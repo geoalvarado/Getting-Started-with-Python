@@ -81,3 +81,12 @@ Series.value_counts(
     dropna=True
 )
 ```
+
+## Using the `.groupby()` and `.agg()` attributes to summarize dataframes with functions for statistics:
+
+If you have a dataframe `df` and you would like to summarize statistics grouping specific columns and statistical calculations, you can use the following:
+```
+stats = df.groupby('column_to_group')['column_to_perform_calcs'].agg(min,max,mean)
+```
+
+This is basically grouping the dataframe by a specific column and then calculating the min, max, and mean of the given column inside the square brackets. (I know, this terminology is confusing but this is how the `groupby()` attribute works...)
