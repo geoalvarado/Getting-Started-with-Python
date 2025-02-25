@@ -31,7 +31,7 @@ To verify the installation:
 
 It should show something like Python 3.x.x.
 
-### 3. Install a Virtual Environment Manager (Recommended)
+### 3. Install a Virtual Environment Manager (Recommended, please use a virtual environment whenever using python on your MAC to avoid mixing installed packages)
 
 For managing Python projects efficiently, you should use virtual environments.
 
