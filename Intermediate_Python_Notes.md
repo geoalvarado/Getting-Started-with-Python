@@ -14,3 +14,46 @@ The best way to add a column to a DataFrame is with apply:
 `df['NEW_COLUMN] = df['OLD_COLUMN'].apply()`
 
 When looping for 'specific times' use `range()` with the number of times you would like to loop inside the parenthesis
+
+
+# Data Manipulation with Pandas
+
+## Cool attributes to use:
+
+### DF Attributes
+
+`df.head()` shows the first six rows of the DF
+
+`df.columns()` and `df.index()` shows the number of rows and columns
+
+## Tip: Not all attributes need parenthesis:
+
+Whether you use parentheses depends on whether the attribute is a method (function) or a variable (property).
+
+Methods (functions) require parentheses because they need to be called.
+
+```
+class Example:
+    def greet(self):
+        return "Hello!"
+obj = Example()
+print(obj.greet())  # ✅ Calls the method -> "Hello!"
+print(obj.greet)    # ❌ Prints the method object, not the result
+```
+
+Variables (properties) do not need parentheses because they just store values.
+
+```
+class Example:
+    def __init__(self):
+        self.message = "Hello!"
+
+obj = Example()
+print(obj.message)  # ✅ Accesses the attribute -> "Hello!"
+```
+
+If you're unsure whether an attribute needs parentheses, you can check if it's callable using:
+
+`callable(obj.attribute)`.
+
+
