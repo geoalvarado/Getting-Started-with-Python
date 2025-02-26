@@ -99,3 +99,10 @@ import numpy as np
 # Example of creating a pivot table
 pivot_table = df.pivot_table(values='Weight', index='Color', aggfunc=np.median)
 ```
+
+## Filtering a DataFrame based on a list of column values with `.isin()`:
+```
+# where:
+list_of_values_in_column = ['a','b','c']
+df[df['column'].isin(list_of_values_in_column)])
+```
