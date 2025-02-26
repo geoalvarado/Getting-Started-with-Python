@@ -90,3 +90,12 @@ stats = df.groupby('column_to_group')['column_to_perform_calcs'].agg(min,max,mea
 ```
 
 This is basically grouping the dataframe by a specific column and then calculating the min, max, and mean of the given column inside the square brackets. (I know, this terminology is confusing but this is how the `groupby()` attribute works...)
+
+## Example of creating a Pivot Table:
+```
+import pandas as pd
+import numpy as np
+
+# Example of creating a pivot table
+pivot_table = df.pivot_table(values='Weight', index='Color', aggfunc=np.median)
+```
