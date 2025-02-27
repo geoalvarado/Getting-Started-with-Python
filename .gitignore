@@ -1,3 +1,67 @@
+# Python Bytecode files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / Packaging
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+pip-log.txt
+*.egg
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+.virtualenv/
+
+# PyCharm / IntelliJ IDEA
+.idea/
+
+# VS Code
+.vscode/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Log files
+*.log
+
+# Python test/coverage reports
+.coverage
+.coverage.*
+*.hypothesis/
+
+# MySQL or SQLite database files
+*.sqlite
+*.sqlite3
+
+# Flask, Django, and other web frameworks
+instance/
+*.log
+*.pot
 *.pyc
-../.idea/
