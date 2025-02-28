@@ -122,3 +122,7 @@ df.isna().sum().plot(kind="bar")
 plt.show()
 ```
 
+## Sorting Values
+Read more about it here:
+`https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html`
+
