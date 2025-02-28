@@ -105,8 +105,20 @@ pivot_table = df.pivot_table(values='Weight', index='Color', aggfunc=np.median)
 # where:
 list_of_values_in_column = ['a','b','c']
 df[df['column'].isin(list_of_values_in_column)])
+
+
 ```
 ## Shorter way to generate dictionaries:
 This is usefull when using an attribute with multiple keys and items where a dictionary is needed:
 In this case, `dict(facecolor='lightgray', alpha=0.5)` is the same as `{'facecolor':'lightgray','alpha':0.5}`
 Very handy!
+
+
+## Plotting missing values
+Creates a bar chart that highlights which values are missing!
+```
+import matplotlib.pyplot as plt
+df.isna().sum().plot(kind="bar")
+plt.show()
+```
+
