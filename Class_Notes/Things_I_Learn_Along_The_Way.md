@@ -15,3 +15,36 @@ if __name__ == "__main__":
     # This code runs only when script_a.py is executed directly
     print("Script A is being run directly")
 ```
+
+## Detecting when specific values are "On" and "Off" in order to get cumulative time and specific calculations.
+
+Let's say you have a dataframe. You decide to plot time in the x axis and some other parameter in the y axis.
+You want to figure out what's the maximum amount of time your y axis parameter dwells at a certain value.
+
+For this, you can use boolean columns. One column detects when a value is either `True` or `False`, and the other column is the same boolean column but shifted by one index.
+
+This helps the user identify where my y axis parameter changes:
+
+```commandline
+# Step 1: Find where y is 100
+mask = df['y'] == 100
+
+# Step 2: Identify the contiguous periods where y = 100
+df['shifted'] = mask.shift(fill_value=False)  # Create a shifted column to detect changes
+
+# Step 3: Create a group identifier for each contiguous block of True values
+df['group'] = (mask != df['shifted']).cumsum()
+```
+
+Now, step 3 is nice because I am assigning a unique number with `.cumsum()`
+everytime there is a change in y, i.e. everytime `mask != shifted`.
+If `mask != shifted` then certainly, a change ocurred. 
+
+Once I have uniquely identified where my y parameter meets my requirement, I can then use this to group by unique numbers and make my calculations:
+```commandline
+# Step 4: Filter for the groups where y = 100
+dwell_groups = df[mask].groupby('group')
+
+# Step 5: Calculate the duration of each dwell time
+dwell_times = dwell_groups['time'].agg(lambda x: x.max() - x.min())
+```

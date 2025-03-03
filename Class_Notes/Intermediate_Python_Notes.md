@@ -165,6 +165,13 @@ Square brackets `[]` ensure that the dictionary is in `list` format since datafr
 Also, sometimes you may want to rename the index from the standard formatting Pandas uses `0` to anything you want.
 For this, use the following:
 ```
-df = df.reindex(['A'])
+df.index = ['A']
 ```
 Square brackets `[]` ensure we follow the Data Frame creation methodology.
+
+If you want to create an array that goes from x to y, splitted by z you can use `np.linspace`:
+```commandline
+array = np.linspace(1,100,2)
+```
+
+This generates an array from 1 to 100 splitted into two's (2,4,6, etc.)
