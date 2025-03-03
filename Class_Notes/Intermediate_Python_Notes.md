@@ -126,3 +126,45 @@ plt.show()
 Read more about it here:
 `https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html`
 
+## Best way to rename a column from a DF
+
+If you don’t want to create a new DataFrame and instead modify it directly:
+```
+df.rename(columns={"A": "Alpha", "B": "Beta"}, inplace=True)
+```
+If you want to create a new DF:
+
+```
+import pandas as pd
+
+df = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
+
+df = df.rename(columns={"A": "Alpha"})  # Renaming column "A" to "Alpha"
+print(df)
+```
+
+or rename multiple columns:
+
+```
+df = df.rename(columns={"A": "Alpha", "B": "Beta"})
+print(df)
+```
+
+You can also rename using a function:
+```
+df.columns = df.columns.str.lower()
+```
+
+If you would like to convert a dictionary into a Dataframe, you can use this:
+
+```
+df = pd.DataFrame([dict])
+```
+Square brackets `[]` ensure that the dictionary is in `list` format since dataframe creation expects multiple values.
+
+Also, sometimes you may want to rename the index from the standard formatting Pandas uses `0` to anything you want.
+For this, use the following:
+```
+df = df.reindex(['A'])
+```
+Square brackets `[]` ensure we follow the Data Frame creation methodology.
