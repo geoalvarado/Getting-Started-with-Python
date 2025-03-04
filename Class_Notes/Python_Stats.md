@@ -21,13 +21,15 @@ scipy.stats.binom.rvs(n, p, size=None)
 ```
 
 Where:
-	•	n → Number of trials (e.g., number of coin flips)
-	•	p → Probability of success in each trial (e.g., probability of getting heads)
-	•	size → Number of random samples to generate (default is 1)
+n: Number of trials (e.g., number of coin flips)
+
+p: Probability of success in each trial (e.g., probability of getting heads)
+
+size: Number of random samples to generate (default is 1)
 
 Use Cases:
-	•	Simulating coin flips (or any repeated binary outcome)
-	•	Modeling success/failure experiments (e.g., number of defective items in a batch)
-	•	Testing probabilistic algorithms (e.g., A/B testing, reliability modeling)
+Simulating coin flips (or any repeated binary outcome)
 
-Would you like a specific example applied to something you’re working on?
+Modeling success/failure experiments (e.g., number of defective items in a batch)
+
+Testing probabilistic algorithms (e.g., A/B testing, reliability modeling)
