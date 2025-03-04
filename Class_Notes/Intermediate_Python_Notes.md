@@ -175,3 +175,10 @@ array = np.linspace(1,100,2)
 ```
 
 This generates an array from 1 to 100 splitted into two's (2,4,6, etc.)
+
+## Getting the shape of a DataFrame with Numpy attribute `.shape`
+You can use this attribute that returns a tuple with the shape of the dataframe (number of rows, numbers of columns):
+
+```
+df.shape  #Returns (rows, columns)
+```
