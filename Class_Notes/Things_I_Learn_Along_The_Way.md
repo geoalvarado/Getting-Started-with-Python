@@ -48,3 +48,12 @@ dwell_groups = df[mask].groupby('group')
 # Step 5: Calculate the duration of each dwell time
 dwell_times = dwell_groups['time'].agg(lambda x: x.max() - x.min())
 ```
+
+
+## Grabbing a specific value based on index number and column name
+I have had instances where I try to pull out a specific value from a dataframe and assign it to a variable based on index number and column name. For this you can combine `.iloc[]` and `.getloc()`
+```
+column_name = 'A'
+column_index = df.columns.get_loc('A') # Get's the index or number of column
+value_in_cell = df.iloc[-1,column_index] # Can be -1 (last index) or whatever other condition you want it to be
+```
