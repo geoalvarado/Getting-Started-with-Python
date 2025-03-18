@@ -73,5 +73,8 @@ df = pd.DataFrame(data)
 filtered_columns = df.filter(regex=r'a$') # Using $ after the string means "ends with a"
 filtered_columns = df.filter(regex=r'^a') # Using ^ before the string means "starts with a"
 print(filtered_columns)
+
+# pandas.Dataframe.filter() let's you filter dataframes
+# see documentation here: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.filter.html
 ```
 
