@@ -57,3 +57,21 @@ column_name = 'A'
 column_index = df.columns.get_loc('A') # Get's the index or number of column
 value_in_cell = df.iloc[-1,column_index] # Can be -1 (last index) or whatever other condition you want it to be
 ```
+## Filtering a column based on specific strings in the column names:
+
+Example: filter columns ending with the string `a`:
+
+```
+import pandas as pd
+import re
+
+# Sample DataFrame
+data = {'zebra': [1, 2, 3], 'gorilla': [4, 5, 6], 'mouse': [7, 8, 9], 'anaconda': [10, 11, 12]}
+df = pd.DataFrame(data)
+
+# Filter columns ending with 'a'
+filtered_columns = df.filter(regex=r'a$') # Using $ after the string means "ends with a"
+filtered_columns = df.filter(regex=r'^a') # Using ^ before the string means "starts with a"
+print(filtered_columns)
+```
+
