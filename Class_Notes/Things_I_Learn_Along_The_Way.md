@@ -78,3 +78,13 @@ print(filtered_columns)
 # see documentation here: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.filter.html
 ```
 
+# Using a better way to evaluate columns:
+
+instead of using:
+```
+df['c'] = df['a'] - df['b']
+```
+use `.eval()`
+```
+df.eval('c = a + b', inplace=True)
+```
