@@ -88,3 +88,25 @@ use `.eval()`
 ```
 df.eval('c = a + b', inplace=True)
 ```
+
+# Binning data:
+
+You can use `pandas.cut()` and `.value_count().sort_index()`
+
+Example:
+
+```commandline
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = pd.Series([1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5]) # Creates a series
+bins = pd.cut(data, bins=5) # Uses pandas.cut() to bin the series and create categories
+freq = bins.value_counts().sort_index() # Counts how many times the series values fall into each created category
+
+# Plot histogram using the binned data
+freq.plot(kind='bar', edgecolor='black')
+plt.title('Histogram from Binned Data')
+plt.xlabel('Bins')
+plt.ylabel('Frequency')
+plt.show()
+```
